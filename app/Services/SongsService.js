@@ -4,7 +4,7 @@ import store from "../store.js";
 // @ts-ignore
 let _sandBox = axios.create({
   //TODO Change YOURNAME to your actual name
-  baseURL: "//bcw-sandbox.herokuapp.com/api/YOURNAME/songs"
+  baseURL: "//bcw-sandbox.herokuapp.com/api/LoganG/songs"
 });
 
 class SongsService {
@@ -24,6 +24,8 @@ class SongsService {
     $.getJSON(url)
       .then(res => {
         let results = res.results.map(rawData => new Song(rawData));
+        console.log(results);
+
         store.commit("songs", results);
       })
       .catch(err => {
@@ -40,6 +42,7 @@ class SongsService {
       .then(res => {
         //TODO What are you going to do with this result
         let results = res.results.map(rawData => new Song(rawData));
+        store.commit("playlist", results);
       })
       .catch(error => {
         throw new Error(error);
@@ -52,6 +55,10 @@ class SongsService {
    * @param {string} id
    */
   addSong(id) {
+    let specificSong = store.State.songs.find(s => s._id == id);
+    _sandBox.post("", specificSong).then(res => {
+      this.getMySongs();
+    });
     //TODO you only have an id, you will need to find it in the store before you can post it
     //TODO After posting it what should you do?
   }
