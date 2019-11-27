@@ -52,6 +52,7 @@ export default class Song {
               </div>
             <div class="">
               <audio src="${this.preview}" controls></audio>
+              <button type="button" class="btn" onclick="app.songsController.removeSong('${this._id}')">Remove Song</button>
             </div>
 
         `;

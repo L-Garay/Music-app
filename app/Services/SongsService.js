@@ -4,7 +4,7 @@ import store from "../store.js";
 // @ts-ignore
 let _sandBox = axios.create({
   //TODO Change YOURNAME to your actual name
-  baseURL: "//bcw-sandbox.herokuapp.com/api/LoganG/songs"
+  baseURL: "//bcw-sandbox.herokuapp.com/api/LoganG"
 });
 
 class SongsService {
@@ -38,10 +38,10 @@ class SongsService {
    */
   getMySongs() {
     _sandBox
-      .get()
+      .get("/songs")
       .then(res => {
         //TODO What are you going to do with this result
-        let results = res.results.map(rawData => new Song(rawData));
+        let results = res.data.data.map(rawData => new Song(rawData));
         store.commit("playlist", results);
       })
       .catch(error => {
@@ -56,7 +56,7 @@ class SongsService {
    */
   addSong(id) {
     let specificSong = store.State.songs.find(s => s._id == id);
-    _sandBox.post("", specificSong).then(res => {
+    _sandBox.post("/songs", specificSong).then(res => {
       this.getMySongs();
     });
     //TODO you only have an id, you will need to find it in the store before you can post it
@@ -69,6 +69,10 @@ class SongsService {
    * @param {string} id
    */
   removeSong(id) {
+    let songToDelete = store.State.playlist.find(s => s._id == id);
+    _sandBox.delete(`/songs/${id}`, songToDelete).then(res => {
+      this.getMySongs();
+    });
     //TODO Send the id to be deleted from the server then update the store
   }
 }
