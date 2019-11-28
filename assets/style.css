@@ -1,3 +1,26 @@
 body {
   min-height: 100vh;
 }
+
+header {
+  min-height: 10vh;
+  text-align: center;
+  background-color: aquamarine;
+}
+
+.search-btn {
+  background-color: black;
+  color: white;
+}
+
+.title {
+  display: flex;
+  justify-content: start;
+  align-self: center;
+}
+
+.center-icon {
+  display: flex;
+  justify-self: center;
+  align-self: center;
+}

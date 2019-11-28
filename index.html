@@ -14,20 +14,27 @@
 
   <body class="container-fluid">
     <header class="row">
-      <div class="col-12 bannerStyle">
-        <p>Music is Fun</p>
+      <div class="col-5 col-md-5 title">
+        <h2>Got Tunes?</h2>
       </div>
-      <div class="offset-4 col-4">
+      <div class="col-2 col-md-4 center-icon">
+        <i class="fab fa-soundcloud fa-5x"></i>
+      </div>
+      <div class="col-5 col-md-3 align-self-center">
         <form onsubmit="app.songsController.search(event)">
-          <input
-            type="text"
-            class="form-control"
-            name="query"
-            placeholder="Search For Music"
-          />
-          <button class="btn btn-success mt-1 form-control" type="submit">
-            Search
-          </button>
+          <div class="input-group">
+            <input
+              type="text"
+              class="form-control"
+              name="query"
+              placeholder="Search For Music"
+            />
+            <div class="input-group-append">
+              <button class="btn search-btn" type="submit">
+                <i class="fas fa-music fa-sm"></i>
+              </button>
+            </div>
+          </div>
         </form>
       </div>
     </header>
@@ -35,17 +42,12 @@
     <main class="row">
       <div class="col-12 col-md-6">
         <h3 class="text-center">Search Results</h3>
-        <div id="songs" class="row">
-            
-          </div>
-        </div>
+        <div id="songs" class="row"></div>
       </div>
+
       <div class="col-12 col-md-6">
         <h3 class="text-center">Playlist</h3>
-        <div class="row justify-content-center" id="playlist">
-            
-          </div>
-        </div>
+        <div class="row justify-content-center" id="playlist"></div>
       </div>
     </main>
 
@@ -57,6 +59,10 @@
     <script
       src=" https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"
       integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/82e8f37917.js"
       crossorigin="anonymous"
     ></script>
     <script src="app/main.js" type="module"></script>
