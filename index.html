@@ -14,13 +14,13 @@
 
   <body class="container-fluid">
     <header class="row">
-      <div class="col-5 col-md-5 title">
+      <div class="col-3 col-md-5 title">
         <h2>Got Tunes?</h2>
       </div>
-      <div class="col-2 col-md-4 center-icon">
+      <div class="col-4 offset-1 offset-md-0 col-md-4 center-icon">
         <i class="fab fa-soundcloud fa-5x"></i>
       </div>
-      <div class="col-5 col-md-3 align-self-center">
+      <div class="col-4 col-md-3 align-self-center">
         <form onsubmit="app.songsController.search(event)">
           <div class="input-group">
             <input
@@ -40,14 +40,26 @@
     </header>
 
     <main class="row">
-      <div class="col-12 col-md-6">
+      <div class="col-12 col-md-3">
         <h3 class="text-center">Search Results</h3>
-        <div id="songs" class="row"></div>
+        <div id="songs" class="row scrollplz"></div>
       </div>
-
-      <div class="col-12 col-md-6">
+      <div
+        class="col-12 col-md-6 d-flex flex-column align-items-center justify-content-center"
+      >
+        <p class="align-self-start">You're listening to</p>
+        <div id="current-song" class="d-flex flex-column text-align-center">
+          <img src="//placehold.it/275x275" alt="active music" />
+          <div class="d-flex flex-column align-items-center">
+            <h3>${this.title} - ${this.artist}</h3>
+            <p>Album: ${this.album} | Price: ${this.price} here</p>
+            <audio src="${this.preview}" controls></audio>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-3">
         <h3 class="text-center">Playlist</h3>
-        <div class="row justify-content-center" id="playlist"></div>
+        <div class="row justify-content-center scrollplz" id="playlist"></div>
       </div>
     </main>
 

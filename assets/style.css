@@ -24,3 +24,22 @@ header {
   justify-self: center;
   align-self: center;
 }
+
+.audio {
+  max-width: 100%;
+}
+
+.font1 {
+  font-size: small;
+}
+.font2 {
+  font-size: x-small;
+}
+p {
+  margin-bottom: 0;
+}
+
+.scrollplz {
+  overflow: auto;
+  max-height: 75vh;
+}
