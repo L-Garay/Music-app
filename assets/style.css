@@ -5,28 +5,87 @@ body {
 header {
   min-height: 10vh;
   text-align: center;
-  background-color: aquamarine;
+  background-color: #52616b;
+}
+.header-text {
+  background-image: linear-gradient(
+    to left,
+    violet,
+    indigo,
+    blue,
+    green,
+    yellow,
+    orange,
+    red
+  );
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+main {
+  background-color: #52616b;
+  border-top: 2px solid #f0f5f9;
 }
 
 .search-btn {
-  background-color: black;
-  color: white;
+  background-color: #1e2022;
+  color: #f0f5f9;
+}
+.add-btn {
+  border: 1px solid #f0f5f9;
+  font-size: xx-small;
+  padding: 0;
+  max-width: 50%;
+  color: #f0f5f9;
+  margin-top: 2pt;
+}
+
+.add-btn:hover {
+  color: green;
+  border: 1px solid green;
+}
+
+.remove-btn {
+  border: 1px solid #f0f5f9;
+  font-size: xx-small;
+  padding: 0;
+  max-width: 50%;
+  color: #f0f5f9;
+  margin-top: 2pt;
+}
+
+.remove-btn:hover {
+  color: red;
+  border: 1px solid red;
 }
 
 .title {
   display: flex;
   justify-content: start;
   align-self: center;
+  color: #f0f5f9;
+  font-family: "Monoton", cursive;
+}
+
+.section-titles {
+  font-family: "Monoton", cursive;
+  color: #f0f5f9;
+  margin-top: 3pt;
+  border-bottom: 1px solid #c9d6df;
+  text-shadow: 2px 2px 5px white;
 }
 
 .center-icon {
   display: flex;
   justify-self: center;
   align-self: center;
+  color: white;
+  text-shadow: 2px 2px 2px black;
 }
 
 .audio {
   max-width: 100%;
+  padding: 3pt;
 }
 
 .font1 {
@@ -42,4 +101,20 @@ p {
 .scrollplz {
   overflow: auto;
   max-height: 75vh;
+}
+
+.section1 {
+  background-color: #1e2022;
+  border-right: 1px solid #f0f5f9;
+}
+
+.section2 {
+  background-color: #1e2022;
+  border-left: 1px solid #f0f5f9;
+}
+
+.card {
+  background-color: #1e2022;
+  border: none;
+  color: #f0f5f9;
 }

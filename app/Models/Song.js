@@ -21,20 +21,21 @@ export default class Song {
           <p class="card-title mb-0"><b>${this.title}</b></p>
           <p class="card-text font1 mb-0">${this.artist} | ${this.album}</p>
           <p class="card-text font2 mb-0">${this.price}</p>
+          <button type="button" class="btn add-btn" onclick="app.songsController.addSong('${this._id}')">Add Song</button>
         </div>
       </div>
     </div>
     </div>
     <div>
     <audio class="audio" src="${this.preview}" controls></audio>
-    <button type="button" class="btn" onclick="app.songsController.addSong('${this._id}')">Add Song</button></div>
+    </div>
 
         `;
   }
 
   get playlistTemplate() {
     return `
-    <div class="card mb-3 w-100 d-flex">
+    <div class="card pl-2 mb-3 w-100 d-flex">
     <div class="row no-gutters">
       <div class="col-3 align-self-center">
         <img src="${this.albumArt}" height="75" width="75" alt="fdgs">
@@ -44,13 +45,14 @@ export default class Song {
           <p class="card-title mb-0"><b>${this.title}</b></p>
           <p class="card-text font1 mb-0">${this.artist}</p>
           <p class="card-text font2 mb-0">${this.album}</p>
+          <button type="button" class="btn remove-btn" onclick="app.songsController.removeSong('${this._id}')">Remove me</button>
         </div>
       </div>
     </div>
     </div>
     <div>
     <audio class="audio" src="${this.preview}" controls></audio>
-    <button type="button" class="btn" onclick="app.songsController.removeSong('${this._id}')">Remove Song</button></div>
+    </div>
 
         `;
   }

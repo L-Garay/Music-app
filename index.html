@@ -5,8 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link
-      rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Monoton&display=swap"
+      rel="stylesheet"
     />
     <link rel="stylesheet" href="assets/style.css" />
     <title>Music is Fun</title>
@@ -15,7 +19,7 @@
   <body class="container-fluid">
     <header class="row">
       <div class="col-3 col-md-5 title">
-        <h2>Got Tunes?</h2>
+        <h2 class="header-text">Got Tunes?</h2>
       </div>
       <div class="col-4 offset-1 offset-md-0 col-md-4 center-icon">
         <i class="fab fa-soundcloud fa-5x"></i>
@@ -40,25 +44,25 @@
     </header>
 
     <main class="row">
-      <div class="col-12 col-md-3">
-        <h3 class="text-center">Search Results</h3>
+      <div class="col-12 col-md-3 section1">
+        <h3 class="text-center section-titles">Search Results</h3>
         <div id="songs" class="row scrollplz"></div>
       </div>
       <div
         class="col-12 col-md-6 d-flex flex-column align-items-center justify-content-center"
       >
-        <p class="align-self-start">You're listening to</p>
+        <p class="align-self-start section-titles mb-2">You're listening to</p>
         <div id="current-song" class="d-flex flex-column text-align-center">
           <img src="//placehold.it/275x275" alt="active music" />
-          <div class="d-flex flex-column align-items-center">
+          <div class="d-flex flex-column align-items-center pt-2">
             <h3>${this.title} - ${this.artist}</h3>
             <p>Album: ${this.album} | Price: ${this.price} here</p>
-            <audio src="${this.preview}" controls></audio>
+            <audio class="mt-1" src="${this.preview}" controls></audio>
           </div>
         </div>
       </div>
-      <div class="col-12 col-md-3">
-        <h3 class="text-center">Playlist</h3>
+      <div class="col-12 col-md-3 pt-2 pt-md-0 section2">
+        <h3 class="text-center section-titles">Playlist</h3>
         <div class="row justify-content-center scrollplz" id="playlist"></div>
       </div>
     </main>
