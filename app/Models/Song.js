@@ -11,7 +11,7 @@ export default class Song {
 
   get Template() {
     return `
-    <div class="card mb-3 w-100 d-flex">
+    <div class="card px-2 mb-1 w-100 d-flex">
     <div class="row no-gutters">
       <div class="col-3 align-self-center">
         <img src="${this.albumArt}" height="75" width="75" alt="fdgs">
@@ -24,18 +24,19 @@ export default class Song {
           <button type="button" class="btn add-btn" onclick="app.songsController.addSong('${this._id}')">Add Song</button>
         </div>
       </div>
+      <div class="audio-div">
+        <audio class="audio" src="${this.preview}" controls></audio>
+      </div>
     </div>
     </div>
-    <div>
-    <audio class="audio" src="${this.preview}" controls></audio>
-    </div>
+    
 
         `;
   }
 
   get playlistTemplate() {
     return `
-    <div class="card pl-2 mb-3 w-100 d-flex">
+    <div class="card px-2 mb-1 w-100 d-flex">
     <div class="row no-gutters">
       <div class="col-3 align-self-center">
         <img src="${this.albumArt}" height="75" width="75" alt="fdgs">
@@ -48,11 +49,12 @@ export default class Song {
           <button type="button" class="btn remove-btn" onclick="app.songsController.removeSong('${this._id}')">Remove me</button>
         </div>
       </div>
+      <div mb-1 class="audio-div">
+        <audio class="audio" src="${this.preview}" controls></audio>
+      </div>
     </div>
     </div>
-    <div>
-    <audio class="audio" src="${this.preview}" controls></audio>
-    </div>
+    
 
         `;
   }

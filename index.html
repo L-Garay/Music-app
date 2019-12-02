@@ -12,6 +12,10 @@
       href="https://fonts.googleapis.com/css?family=Monoton&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css?family=Iceland&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="assets/style.css" />
     <title>Music is Fun</title>
   </head>
@@ -21,8 +25,8 @@
       <div class="col-3 col-md-5 title">
         <h2 class="header-text">Got Tunes?</h2>
       </div>
-      <div class="col-4 offset-1 offset-md-0 col-md-4 center-icon">
-        <i class="fab fa-soundcloud fa-5x"></i>
+      <div class="col-4 offset-1 offset-md-0 col-md-4 pl-5 pl-md-0 center-icon">
+        <i class="center-img fab fa-soundcloud fa-4x"></i>
       </div>
       <div class="col-4 col-md-3 align-self-center">
         <form onsubmit="app.songsController.search(event)">
@@ -44,24 +48,28 @@
     </header>
 
     <main class="row">
-      <div class="col-12 col-md-3 section1">
-        <h3 class="text-center section-titles">Search Results</h3>
+      <div class="col-12 col-md-3 order-0 order-md-0 section1">
+        <h3 class="text-center section-titles">Results</h3>
         <div id="songs" class="row scrollplz"></div>
       </div>
       <div
-        class="col-12 col-md-6 d-flex flex-column align-items-center justify-content-center"
+        class="col-12 col-md-6 order-2 order-md-1 d-flex flex-column align-items-center justify-content-center"
       >
         <p class="align-self-start section-titles mb-2">You're listening to</p>
         <div id="current-song" class="d-flex flex-column text-align-center">
-          <img src="//placehold.it/275x275" alt="active music" />
+          <img
+            class="d-none d-md-block"
+            src="//placehold.it/275x275"
+            alt="active music"
+          />
           <div class="d-flex flex-column align-items-center pt-2">
-            <h3>${this.title} - ${this.artist}</h3>
+            <h5>${this.title} - ${this.artist}</h5>
             <p>Album: ${this.album} | Price: ${this.price} here</p>
             <audio class="mt-1" src="${this.preview}" controls></audio>
           </div>
         </div>
       </div>
-      <div class="col-12 col-md-3 pt-2 pt-md-0 section2">
+      <div class="col-12 col-md-3 pt-2 pt-md-0 order-1 order-md-2 section2">
         <h3 class="text-center section-titles">Playlist</h3>
         <div class="row justify-content-center scrollplz" id="playlist"></div>
       </div>

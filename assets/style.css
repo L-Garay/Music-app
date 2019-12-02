@@ -20,17 +20,57 @@ header {
   );
   -webkit-background-clip: text;
   color: transparent;
+  font-size: 2rem;
+  margin-bottom: 0;
 }
 
-main {
-  background-color: #52616b;
-  border-top: 2px solid #f0f5f9;
+.center-icon {
+  display: flex;
+  justify-self: center;
+  align-self: center;
+  /* color: white;
+  text-shadow: 2px 2px 2px black; */
+}
+
+.center-img {
+  background-image: linear-gradient(
+    to left,
+    violet,
+    indigo,
+    blue,
+    green,
+    yellow,
+    orange,
+    red
+  );
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.form-control {
+  background-color: #1e2022;
+  font-family: "Iceland", cursive;
+}
+.form-control:active {
+  background-color: #1e2022;
+}
+.form-control:visited {
+  background-color: #1e2022;
 }
 
 .search-btn {
   background-color: #1e2022;
   color: #f0f5f9;
+  border: 1px solid #f0f5f9;
 }
+.search-btn:hover {
+  color: #52616b;
+}
+main {
+  background-color: #52616b;
+  border-top: 2px solid #f0f5f9;
+}
+
 .add-btn {
   border: 1px solid #f0f5f9;
   font-size: xx-small;
@@ -38,6 +78,7 @@ main {
   max-width: 50%;
   color: #f0f5f9;
   margin-top: 2pt;
+  font-family: "Iceland", cursive;
 }
 
 .add-btn:hover {
@@ -52,6 +93,7 @@ main {
   max-width: 50%;
   color: #f0f5f9;
   margin-top: 2pt;
+  font-family: "Iceland", cursive;
 }
 
 .remove-btn:hover {
@@ -75,17 +117,13 @@ main {
   text-shadow: 2px 2px 5px white;
 }
 
-.center-icon {
-  display: flex;
-  justify-self: center;
-  align-self: center;
-  color: white;
-  text-shadow: 2px 2px 2px black;
-}
-
 .audio {
   max-width: 100%;
   padding: 3pt;
+  max-height: 100%;
+}
+.audio-div {
+  height: 25px;
 }
 
 .font1 {
@@ -96,6 +134,7 @@ main {
 }
 p {
   margin-bottom: 0;
+  font-family: "Iceland", cursive;
 }
 
 .scrollplz {
@@ -117,4 +156,33 @@ p {
   background-color: #1e2022;
   border: none;
   color: #f0f5f9;
+}
+
+.card-body {
+  padding-bottom: 0.5rem;
+}
+
+@media (orientation: portrait) {
+  #playlist {
+    flex-direction: column;
+    max-height: 40vh;
+  }
+}
+
+@media (orientation: landscape) {
+  #playlist {
+    flex-direction: row;
+  }
+}
+@media (orientation: portrait) {
+  #songs {
+    flex-direction: column;
+    max-height: 50vh;
+  }
+}
+
+@media (orientation: landscape) {
+  #songs {
+    flex-direction: row;
+  }
 }
